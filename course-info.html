@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>The Ancient Secrets of Computer Vision - An Introduction to Computer Vision</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Joseph Redmon">
+                <meta name="msvalidate.01" content="305CD82AE65FC4C9597F80416C1271B7" />
+		<link rel='stylesheet' media='screen' href='/static/css_v2.3/base.css' />
+		<link rel='stylesheet' media='screen' href='/static/css_v2.3/darknet.css' />
+        <link rel='stylesheet' media='screen' href='/static/css_v2.3/index.css' />
+		<link rel='stylesheet' media='screen' href='/static/css_v2.3/papers.css' />
+		<link rel='stylesheet' media='screen' href='/static/css_v2.3/projects.css' />
+		<link rel='stylesheet' media='screen' href='/static/css_v2.3/coqindex.css' />
+
+        <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,400italic' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Roboto:300,300italic,100italic,100,500' rel='stylesheet' type='text/css'>
+		
+		<link rel='icon' type='image/png' href='/static/icon.png' />
+		
+		
+        <meta name="description" content="">
+    
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-37236849-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+
+	<body>
+		<div class=top>
+			<ul class="nav">
+				<a href="/"><li>home</li></a>
+				<a href="/darknet/"><li class=relative><img id=dncircle src="/static/img/darknet_notext.png"></img>darknet</li></a>
+				<a href="/coq-tactics/"><li class=relative><img id=dncircle src="/static/img/coq.png"></img>coq tactics</li></a>
+				<a href="/publications/"><li>publications</li></a>
+				<a href="/projects/"><li>projects</li></a>
+				
+				<a href="/resume/"><li>résumé</li></a>
+			</ul>
+			<div class=break></div>
+			
+			<div class=break></div>
+		</div>
+		
+    <div class="main markdown">
+        <style>
+h4 + ul{
+margin-top:-1em;
+}
+.markdown a{
+color: #f0f;
+}
+.top{
+background-color: #001d;
+position:relative;
+z-index:1;
+}
+#dncircle{
+z-index:2;
+}
+.top a{
+position:relative;
+z-index:3;
+}
+h1, h2, h3, h4, h5 {
+color:#333;
+}
+.main{
+width: 730px;
+margin: 70px auto; color: #333; border: 1px #000 solid; padding: 70px 70px 20px 70px; -webkit-box-shadow: 0px 0 50px #f0f; -moz-box-shadow: 0px 0 30px #f0f; box-shadow: 0px 0 60px 10px #f0f; background: #fff; background: -moz-linear-gradient(top, #EEEEEE 0%, #FFFFFF 2%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEEEEE), color-stop(2%,#FFFFFF)); }
+
+html {
+background-image:url("/media/image/pattern.png");
+background-repeat:repeat;
+}
+</style>
+
+<p><img alt="" src="/media/image/title.jpg" /></p>
+<h2>Course Information</h2>
+<p>This class is a general introduction to computer vision. It covers standard techniques in image processing like filtering, edge detection, stereo, flow, etc. (old-school vision), as well as newer, machine-learning based computer vision. It was originally offered in the <a href="https://courses.cs.washington.edu/courses/cse455/18sp/">spring of 2018 at the University of Washington</a>.</p>
+<h3>Instructors</h3>
+<ul>
+<li><a href="https://pjreddie.com">Joseph Redmon</a></li>
+<li><a href="http://homes.cs.washington.edu/~ali/">Ali Farhadi</a></li>
+</ul>
+<h3>TAs</h3>
+<ul>
+<li>Connor Schenck</li>
+<li>Kiana Ehsani</li>
+<li>Xin Ru Wang</li>
+<li>Yao Lu</li>
+</ul>
+<p>Slides are a mishmash of lots of other people's work. Special thanks to: Rob Fergus, Linda Shapiro, Harvey Rhody, Rick Szeliski, Ali Farhadi, Robert Collins. Lectures 8 and 9 on Flow, 3d, and stereo are given by <a href="https://homes.cs.washington.edu/~schenckc/">Connor Schenck</a>.</p>
+<p>All of the slides, videos, and homeworks are free to use, modify, redistribute as you like without permission. Just make your own copy of the slides on Google Docs, don't ask to modify mine!</p>
+<h2>Homeworks</h2>
+<p>The class has 6 homeworks where you will build out a computer vision library in C. We cover basic image manipulations, filtering, features, stitching, optical flow, machine learning, and convolutional neural networks.</p>
+<ul>
+<li><a href="https://github.com/pjreddie/vision-hw0">Homework 0: Fun with Color!</a></li>
+<li><a href="https://github.com/pjreddie/vision-hw1">Homework 1: Resizing and Filtering</a></li>
+<li><a href="https://github.com/pjreddie/vision-hw2">Homework 2: Panoramas!</a></li>
+<li><a href="https://github.com/pjreddie/vision-hw3">Homework 3: Optical Flow</a></li>
+<li><a href="https://github.com/pjreddie/vision-hw4">Homework 4: Neural Networks and Machine Learning</a></li>
+<li><a href="https://github.com/ehsanik/vision-hw5">Homework 5: PyTorch</a></li>
+</ul>
+<h2>Final Project:</h2>
+<p>There was a final project worth 20% of the final grade.</p>
+<p>Pick any area of computer vision that interests you and pursue some independent work in that area. Each project should have a significant technical component, software implementation, or large-scale study. Projects can focus on developing new techniques or tools in computer vision or applying existing tools to a new domain. If you don't have an idea you can train a classifier on birds and compete in the Kaggle competition posted on the Google Group.</p>
+<h2>Lectures</h2>
+<p>Lectures were automatically recorded with the schools Pantopto system. Unfortunately, some were recorded at the wrong aspect ratio and the audio was not recorded in the image segmentation lecture.</p>
+<p>This <a href="https://www.youtube.com/playlist?list=PLjMXczUzEYcHvw5YYSU92WrY8IwhTuq7p">YouTube playlist</a> has all of the lectures in sequential order.</p>
+<h4>Lecture 1: Introduction</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=8jXIAWg_yHU">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1XUUV4cmqvcwIOHuoXAb-F1CPvxVLRh7c0KNZsqYtT2c/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 2: Human Vision, Color Spaces, Transforms</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=-nt80JUNwlw">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1YBK7QkBW9t4kuZ8bJdwXLspyyeSpEJJldHvAhVcSsiM/edit?usp=sharing">Slides</a></li>
+<li>Further reading:<ul>
+<li><a href="http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf#page=102">CV - 2.3.2 Color</a></li>
+<li><a href="http://cmuems.com/excap/readings/forsyth-ponce-computer-vision-a-modern-approach.pdf#page=68">CVAMA - 3 Color</a></li>
+<li><a href="http://handprint.com/LS/CVS/color.html">A painter discussing color vision</a></li>
+</ul>
+</li>
+</ul>
+<h4>Lecture 3: Image Coordinates, Resizing</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=hpqrDUuk7HY">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1ZkGgPPUzlGOdoGK6YNgiVLNouJW1ZaWzKEupDKmYM_4/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 4: Resizing, Filters, Convolutions</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=5xdbJ7z4Nrc">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/18f0cWwS40jwbP5u37LKvM9ZaHEtRQFUKQ7MCtMdGLmA/edit?usp=sharing">Slides</a></li>
+<li>Further reading:<ul>
+<li><a href="http://cmuems.com/excap/readings/forsyth-ponce-computer-vision-a-modern-approach.pdf#page=197">CVAMA - 7 Linear Filters and Convolution</a></li>
+</ul>
+</li>
+</ul>
+<h4>Lecture 5: Edges and Features</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=z5WSV6CXsxs">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1_ZOtT17Ih2P-MRbWtZ8CTRQaJBz9V6-5_VA00QebiQQ/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 6: Harris, Matching, RANSAC</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=bn4KHa_zWuQ">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1GLPcw-hQB1D94mOzTZKdMwAa8NKuqgih-bWl1vJS0tE/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 7: Matching, RANSAC, HOG, and SIFT</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=taty6lPVcmA">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1h2Az_a28qjKvLpbkwXoW0eut9HTwmjTkjCtk876PYN8/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 8: Optical Flow</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=a-v5_8VGV0A">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1guQ0hGL7tfHibiYID6gULCUO2OJJpNaWu6VYJXScdeY/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 9: 3D, Depth, and Stereo</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=AA8FEwutsVk">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1ZaFvVx8U7hJpGqaqk4Fxjj5QU-EHt8B8zmYbK6uaEaI/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 10: Machine Learning for Computer Vision</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=AIL5PuvRAPI">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1QgvrxpjVJLcYPWPVm9gXvqLjQth4um1nJpc0R00SNpg/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 11: More Machine Learning for Computer Vision</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=3fCrfabOm8U">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1sU-rMMkWXMuQYhjJkhPFAD7VifZnxXMBxOfevdwOOKU/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 12: Neural Networks</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=fXuIpJ-2MR4">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1NLdRUsxH30tSNe46OOd3rPa-xoKFkDR-fYH8rnh0POo/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 13: Convolutional Neural Networks</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=RnD0OFbZGbA">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1LwTvykcPzDoAzQyAZB4cbP5Lh_czqfBAMGnBddVHbxs/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 14: Network Architectures</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=-XK_uMVD2CY">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1B2pEaFkaUIyNDk_XxlH_43fOUNI_OY-L42Q8ZnRrFKY/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 15: Semantic Segmentation</h4>
+<ul>
+<li>Due to the UW grad student strike, Ali gave this lecture. Unfortunately, the audio did not get recorded. I can post the video if you want but it's very boring... If you are sad there isn't another great lecture here, please email UW President Ana Mari Cauce, <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#114;&#101;&#115;&#64;&#117;&#119;&#46;&#101;&#100;&#117;">&#112;&#114;&#101;&#115;&#64;&#117;&#119;&#46;&#101;&#100;&#117;</a> and let her know!</li>
+</ul>
+<h4>Lecture 16: Object Detection</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=2irYRgCFC1I">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1O3JfanUU7ey7D4FCtb_eF7w0l8MMmrg4L0vqSjVix_c/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 17: Guest Lecture from <a href="https://homes.cs.washington.edu/~kemelmi/">Ira Kemelmacher-Shlizerman</a></h4>
+<ul>
+<li>Ira stopped by class to tell students about some awesome research going on in her lab. Unfortunately, the audio again didn't record. You can check out <a href="https://www.youtube.com/watch?v=yLh_RIVJwwY">this video</a> of some of the research she covered in class.</li>
+</ul>
+<h4>Lecture 18: Detection and Instance Segmentation</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=s989zzFkaFo">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1Re2IX7nHuh22y7cMj8rcmN_nP5dDcdRz2zw-6eWwjVY/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 19: Vision and Language</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=EbUqT_TfCTM">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1OWA9GULbXJrZvHgDB-49Wn7KQCwXNw4JaFEGy2EcBxI/edit?usp=sharing">Slides</a></li>
+</ul>
+<h4>Lecture 20: Generative Adversarial Networks</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=erVD9DMik_Q">Video</a></li>
+<li><a href="https://docs.google.com/presentation/d/1kMJ8IA_aUFhO-KRkJPO0m8jvNIb6QZNp2CT8J8ITapU/edit?usp=sharing">Slides</a></li>
+</ul>
+    </div>
+    
+        
+
+	</body>
+</html>
